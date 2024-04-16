@@ -19,7 +19,7 @@ public class Main {
                 .filter(product -> product.getPrice() > 250)
                 .collect(Collectors.toList());
 
-        System.out.println("Список продуктів (тип = Book, ціна > 250):");
+        System.out.println("List of products (type = Book, price > 250):");
         filteredProducts.forEach(product -> {
             System.out.println(product.getType() + " - " + product.getPrice());
         });
