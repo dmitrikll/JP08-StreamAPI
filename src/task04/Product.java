@@ -6,13 +6,13 @@ public class Product {
     private String type;
     private double price;
     private boolean discountApplicable;
-    private LocalDateTime dateAdded;
+    private LocalDateTime createDate;
 
-    public Product(String type, double price, boolean discountApplicable, LocalDateTime dateAdded) {
+    public Product(String type, double price, boolean discountApplicable, LocalDateTime createDate) {
         this.type = type;
         this.price = price;
         this.discountApplicable = discountApplicable;
-        this.dateAdded = dateAdded;
+        this.createDate = createDate;
     }
 
     public String getType() {
@@ -27,7 +27,7 @@ public class Product {
         return discountApplicable;
     }
 
-    public LocalDateTime getDateAdded() {
-        return dateAdded;
+    public LocalDateTime getCreateDate() {
+        return createDate;
     }
 }

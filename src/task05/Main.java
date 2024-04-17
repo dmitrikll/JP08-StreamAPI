@@ -15,7 +15,7 @@ public class Main {
         products.add(new Product("Book", 47.0, true, LocalDate.of(2024, 1, 31)));
 
         double totalCost = products.stream()
-                .filter(product -> product.getDateAdded().getYear() == LocalDate.now().getYear())
+                .filter(product -> product.getCreateDate().getYear() == LocalDate.now().getYear())
                 .filter(product -> product.getType().equals("Book"))
                 .filter(product -> product.getPrice() <= 75)
                 .mapToDouble(Product::getPrice)

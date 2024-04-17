@@ -17,13 +17,13 @@ public class Main {
         products.add(new Product("Book", 470.00, true, LocalDateTime.of(2024, 4, 16, 18, 53)));
 
         List<Product> lastThreeAddedProducts = products.stream()
-                .sorted(Comparator.comparing(Product::getDateAdded).reversed())
+                .sorted(Comparator.comparing(Product::getCreateDate).reversed())
                 .limit(3)
                 .collect(Collectors.toList());
 
         System.out.println("Last three added products: ");
         for (Product product : lastThreeAddedProducts) {
-            System.out.println(product.getType() + " - " + product.getPrice() + " - " + product.getDateAdded());
+            System.out.println(product.getType() + " - " + product.getPrice() + " - " + product.getCreateDate());
         }
     }
 }
