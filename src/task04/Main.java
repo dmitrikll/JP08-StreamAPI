@@ -17,12 +17,7 @@ public class Main {
         products.add(new Product("Book", 470.00, true, LocalDateTime.of(2024, 4, 16, 18, 53)));
 
         List<Product> lastThreeAddedProducts = products.stream()
-                .sorted(new Comparator<Product>() {
-                    @Override
-                    public int compare(Product o1, Product o2) {
-                        return o2.getDateAdded().compareTo(o1.getDateAdded());
-                    }
-                })
+                .sorted(Comparator.comparing(Product::getDateAdded).reversed())
                 .limit(3)
                 .collect(Collectors.toList());
 

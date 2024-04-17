@@ -1,6 +1,7 @@
 package task03;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class Main {
 
         Optional<Product> cheapestProduct = products.stream()
                 .filter(product -> product.getType().equals("Book"))
-                .min((p, n) -> Double.compare(p.getPrice(), n.getPrice()));
+                .min(Comparator.comparingDouble(Product::getPrice));
 
         if (cheapestProduct.isPresent()) {
             System.out.println("The cheapest price: USD " + cheapestProduct.get().getPrice());
